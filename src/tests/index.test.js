@@ -17,10 +17,14 @@ describe('test listener', () => {
     listener.add('test once only', callback, { only: true, once: true })
     listener.add('test once only', callback2, { only: true, once: true })
 
-    expect(listener.get('test')).toEqual([
-      { only: false, once: false, callback },
-      { only: false, once: false, callback: callback2 }
-    ])
+    const keys = [];
+    listener.forEach((key, listener) => {
+      keys.push(key)
+    })
+
+    expect(keys).toEqual(["test", "test only", "test once", "test once only"])
+
+    expect(listener.get('test')).toEqual([callback, callback2])
 
     listener.dispatch('test')
     listener.dispatch('test', 'hello', 'world')
@@ -81,36 +85,21 @@ describe('test listener', () => {
     expect(listener.isExist('test')).toBeTruthy()
 
     listener.remove('test', callback2)
-    expect(listener.get('test')).toEqual([{
-      callback: callback,
-      only: false,
-      once: false
-    }, {
-      callback: callback3,
-      only: false,
-      once: false
-    }])
+    expect(listener.get('test')).toEqual([callback,
+      callback3,])
     expect(listener.isExist('test')).toBeTruthy()
     listener.remove('test')
     expect(listener.isExist('test')).toBeFalsy()
 
     listener.add('test 1', callback)
-    expect(listener.get('test 1')).toEqual([{
-      callback: callback,
-      only: false,
-      once: false
-    }])
+    expect(listener.get('test 1')).toEqual([callback])
     listener.remove('test 1', callback)
     expect(listener.isExist('test 1')).toBeFalsy()
 
 
     listener.add('test only', callback, { only: true })
     listener.add('test only', callback2, { only: true })
-    expect(listener.get('test only')).toEqual({
-      callback: callback2,
-      only: true,
-      once: undefined
-    })
+    expect(listener.get('test only')).toEqual([callback2])
     listener.remove('test only', callback)
     expect(listener.isExist('test only')).toBeTruthy()
     listener.remove('test only', callback2)
@@ -118,10 +107,6 @@ describe('test listener', () => {
 
     listener.add('test to only', callback, { only: true })
     listener.add('test to only', callback2)
-    expect(listener.get('test to only')).toEqual([{
-      callback: callback2,
-      only: false,
-      once: false
-    }])
+    expect(listener.get('test to only')).toEqual([callback2])
   })
 })

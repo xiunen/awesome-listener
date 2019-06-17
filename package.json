@@ -1,17 +1,20 @@
 {
   "name": "awesome-listener",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/main.js",
   "repository": "git@github.com:xiunen/awesome-listener.git",
   "author": "xiuneng.chen <xiuneng.chen@shopee.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
     "jest": "^24.8.0",
-    "webpack": "^4.34.0"
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
   }
 }

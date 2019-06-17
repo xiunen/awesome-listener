@@ -42,11 +42,14 @@ class Listener {
   }
 
   isExist(type) {
-    return this.listeners[type]
+    return !!this.listeners[type]
   }
 
   get(type) {
-    return this.listeners[type]
+    const ret = this.listeners[type]
+    if (Array.isArray(ret)) return ret.map(item => item.callback)
+    if (ret) return [ret.callback]
+    return ret;
   }
 
 
@@ -72,6 +75,11 @@ class Listener {
         }
       }
     }
+  }
+
+  forEach(fn) {
+    const keys = Object.keys(this.listeners)
+    keys.forEach(key => fn.call(this, key, this.get(key)))
   }
 }
 
