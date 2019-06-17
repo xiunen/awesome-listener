@@ -4,7 +4,7 @@ An awesome listener which you can register events, only callback, triggered once
 ## initialize
 
 ### node
-```
+```javascript
 //via require
 const Listener = require('awesome-listener).default
 const listener = new Listener
@@ -22,7 +22,8 @@ const listener = new Listener
 
 ## API
 
-### add(type, callback, options) add listener.
+### add(type, callback, options)
+add listener.
 
 **type** {string}, event type
 
@@ -63,7 +64,7 @@ remove listener or event.
 
 ## Examples
 
-```
+```javascript
   import Listener from 'awesome-listener'
 
   const listener = new Listener()
