@@ -15,7 +15,7 @@ const listener = new Listener
 ```
 
 ### browser
-```
+```javascript
 const Listener = = AwesomeListener.default
 const listener = new Listener
 ```
