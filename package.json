@@ -1,6 +1,6 @@
 {
   "name": "awesome-listener",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/main.js",
   "repository": "git@github.com:xiunen/awesome-listener.git",
   "author": "xiuneng.chen <xiuneng.chen@shopee.com>",

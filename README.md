@@ -6,7 +6,7 @@ An awesome listener which you can register events, only callback, triggered once
 ### node
 ```javascript
 //via require
-const Listener = require('awesome-listener).default
+const Listener = require('awesome-listener').default
 const listener = new Listener
 
 //via import
