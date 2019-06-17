@@ -1,10 +1,11 @@
 {
   "name": "awesome-listener",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "dist/main.js",
   "repository": "git@github.com:xiunen/awesome-listener.git",
   "author": "xiuneng.chen <xiuneng.chen@shopee.com>",
   "license": "MIT",
+  "keywords": ["listener", "event listener", "event dispatcher", "event emitter", "once listener", "only listener", "pub sub"],
   "scripts": {
     "test": "jest",
     "build": "webpack --config webpack.config.js"
