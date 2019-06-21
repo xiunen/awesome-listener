@@ -1,9 +1,9 @@
 {
   "name": "awesome-listener",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/main.js",
   "repository": "git@github.com:xiunen/awesome-listener.git",
-  "author": "xiuneng.chen <xiuneng.chen@shopee.com>",
+  "author": "xiunen <xiunen@163.com>",
   "license": "MIT",
   "keywords": ["listener", "event listener", "event dispatcher", "event emitter", "once listener", "only listener", "pub sub"],
   "scripts": {
